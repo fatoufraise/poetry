@@ -1,0 +1,240 @@
+/* Ajout de styles pour le feedback visuel */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.generated-poem {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #d4edda; /* Couleur de fond */
+  border: 1px solid #c3e6cb; /* Bordure */
+  border-radius: 5px; /* Coins arrondis */
+  color: #155724; /* Couleur du texte */
+  text-align: center;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0dadad1;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title h1 {
+  color: #333; /* Changement de couleur pour le titre */
+  text-align: center;
+}
+
+.center {
+  width: 100%; /* Le générateur occupe toute la largeur */
+  display: flex;
+  flex-direction: column; /* Les éléments à l'intérieur sont alignés en colonne */
+  align-items: center; /* Centrage horizontal */
+  margin-top: 30px; /* Marge supplémentaire en haut */
+}
+
+#text {
+  width: 80%; /* Largeur de l'entrée de texte */
+  max-width: 600px; /* Largeur maximale */
+  padding: 10px;
+  margin-bottom: 20px; /* Ajout de marge en bas */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.poem-types {
+  width: 100%; /* Les types de poèmes occupent toute la largeur */
+  display: flex;
+  flex-wrap: wrap; /* Permet aux boutons de passer à la ligne si nécessaire */
+  justify-content: center; /* Centrage horizontal des boutons */
+}
+
+.poem-types .button-group {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux boutons de passer à la ligne si nécessaire */
+  justify-content: center; /* Centrage horizontal des boutons */
+}
+
+.poem-types button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin: 10px;
+  min-width: 150px; /* Largeur minimale pour les boutons */
+}
+
+#btn {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  min-width: 150px; /* Largeur minimale pour le bouton de génération */
+}
+
+#btn:hover {
+  background-color: #555;
+}
+
+.generated-poem {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  color: #155724;
+  text-align: center;
+  width: 80%; /* Largeur du poème généré */
+  max-width: 600px; /* Largeur maximale */
+}
+
+
+
+/* App.css */
+
+/* Ajoutez ces styles pour le thème sombre */
+.dark {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark .title h1 {
+  color: #fff;
+}
+
+.dark .theme-toggle {
+  color: #fff;
+}
+
+/* Styles pour le bouton de bascule de thème */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Emojis pour le bouton de bascule de thème */
+.theme-toggle:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.sidebar-content {
+  padding: 20px;
+}
+
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Styles pour le thème sombre */
+.dark .sidebar {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark .sidebar-content h2 {
+  color: #fff;
+}
+
+/* App.css */
+
+/* Autres styles existants... */
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #333; /* Fond sombre pour le conteneur du haut */
+}
+
+.theme-toggle,
+.poem-buttons button,
+.history-toggle {
+  color: white; /* Texte blanc pour les boutons */
+  cursor: pointer; /* Curseur pointer pour indiquer l'interaction */
+}
+
+.poem-buttons button {
+  background: none; /* Fond transparent */
+  border: none; /* Pas de bordure */
+}
+
+.poem-buttons {
+  display: flex; /* Affichage en ligne des boutons */
+}
+.poem-container {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #333; /* Fond sombre pour le conteneur du haut */
+}
+
+.logo {
+  flex-grow: 1; /* Le cadre de Poetify prend tout l'espace disponible */
+  display: flex;
+  align-items: center;
+}
+
+.logo .feather-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+
