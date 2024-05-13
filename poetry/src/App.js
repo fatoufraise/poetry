@@ -3,6 +3,31 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook, faLeaf, faFeather, faPen, faMusic, faPenNib, faPencilAlt, faSun, faMoon, faHatWizard } from '@fortawesome/free-solid-svg-icons';
 
+
+function Header({ theme, toggleTheme }) {
+  return (
+    <header>
+      <div className="header-background"></div>
+      <div className="title">
+        <h1>Poetify</h1>
+        <div className="theme-toggle" onClick={toggleTheme}>
+          <FontAwesomeIcon icon={theme === 'light' ? faMoon : faSun} />
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer>
+      <div className="footer-content">
+        <p>© 2024 Poetify. Tous droits réservés.</p>
+      </div>
+    </footer>
+  );
+}
+
 function App() {
   const [inputText, setInputText] = useState('');
   const [generatedPoem, setGeneratedPoem] = useState('');
@@ -10,14 +35,11 @@ function App() {
   const [theme, setTheme] = useState('light');
   const [showFeedback, setShowFeedback] = useState(false);
 
-  
-
   const handleInputChange = (event) => {
     setInputText(event.target.value);
   };
 
   const generatePoem = () => {
-    // Générer le poème en fonction du type sélectionné
     let poem = '';
     if (selectedPoemType === 'sonnet') {
       poem = 'Sonnet généré';
@@ -38,11 +60,8 @@ function App() {
     }
     
     setGeneratedPoem(poem);
-
-    // Afficher le feedback visuel
     setShowFeedback(true);
 
-    // Cacher le feedback après 2 secondes
     setTimeout(() => {
       setShowFeedback(false);
     }, 2000);
@@ -58,15 +77,7 @@ function App() {
 
   return (
     <div className={`content ${theme === 'dark' ? 'dark' : ''}`}>
-      <header>
-        <div className="header-background"></div>
-        <div className="title">
-          <h1>Poetify</h1>
-          <div className="theme-toggle" onClick={toggleTheme}>
-            <FontAwesomeIcon icon={theme === 'light' ? faMoon : faSun} />
-          </div>
-        </div>
-      </header>
+      <Header theme={theme} toggleTheme={toggleTheme} />
       <div className="center">
         <input
           id="text"
@@ -75,8 +86,6 @@ function App() {
           value={inputText}
           onChange={handleInputChange}
         />
-  
-
         <div className="poem-types">
           <div className="button-group">
             <button onClick={() => handlePoemTypeSelection('sonnet')}><FontAwesomeIcon icon={faBook} /> Sonnet</button>
@@ -97,18 +106,17 @@ function App() {
         </div>
       </div>
       <div className="poem-container">
-  <p>{generatedPoem}</p>
-</div>
-
+        <p>{generatedPoem}</p>
+      </div>
       <div className="center">
         <button id="btn" onClick={generatePoem}>
           Générer le Poème
         </button>
-        {showFeedback && <p className="generated-poem fadeIn">{generatedPoem}</p>} {/* Feedback visuel */}
+        {showFeedback && <p className="generated-poem fadeIn">{generatedPoem}</p>}
       </div>
+      <Footer />
     </div>
   );
-  
 }
 
 export default App;
